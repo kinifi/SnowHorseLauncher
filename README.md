@@ -6,3 +6,5 @@ Displays the following:
 - Game Launcher
 - Merch
 - Dev Tasks
+
+![alt tag](https://i.imgur.com/0HMrKbH.gif) 
