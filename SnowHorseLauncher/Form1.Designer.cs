@@ -30,8 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.noInternetIcon = new System.Windows.Forms.PictureBox();
             this.NewsBrowser = new System.Windows.Forms.WebBrowser();
+            this.noInternetIcon = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.snowHorsePictureBox = new System.Windows.Forms.PictureBox();
@@ -67,6 +67,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.tabPage1.Controls.Add(this.NewsBrowser);
             this.tabPage1.Controls.Add(this.noInternetIcon);
             this.tabPage1.Location = new System.Drawing.Point(4, 41);
@@ -75,18 +77,6 @@
             this.tabPage1.Size = new System.Drawing.Size(1001, 685);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "News";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // noInternetIcon
-            // 
-            this.noInternetIcon.Image = global::SnowHorseLauncher.Properties.Resources.no_conection_512;
-            this.noInternetIcon.Location = new System.Drawing.Point(238, 78);
-            this.noInternetIcon.Name = "noInternetIcon";
-            this.noInternetIcon.Size = new System.Drawing.Size(510, 510);
-            this.noInternetIcon.TabIndex = 1;
-            this.noInternetIcon.TabStop = false;
-            this.noInternetIcon.Visible = false;
-            this.noInternetIcon.WaitOnLoad = true;
             // 
             // NewsBrowser
             // 
@@ -99,6 +89,17 @@
             this.NewsBrowser.Url = new System.Uri("http://snowhorsegame.tumblr.com/", System.UriKind.Absolute);
             this.NewsBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted);
             // 
+            // noInternetIcon
+            // 
+            this.noInternetIcon.Image = global::SnowHorseLauncher.Properties.Resources.no_conection_512;
+            this.noInternetIcon.Location = new System.Drawing.Point(238, 78);
+            this.noInternetIcon.Name = "noInternetIcon";
+            this.noInternetIcon.Size = new System.Drawing.Size(510, 510);
+            this.noInternetIcon.TabIndex = 1;
+            this.noInternetIcon.TabStop = false;
+            this.noInternetIcon.Visible = false;
+            this.noInternetIcon.WaitOnLoad = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.button1);
@@ -106,7 +107,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1001, 685);
+            this.tabPage2.Size = new System.Drawing.Size(998, 685);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SNOW HORSE";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -131,7 +132,7 @@
             this.snowHorsePictureBox.Image = global::SnowHorseLauncher.Properties.Resources._12194886_416496711884875_4603880809263483227_o;
             this.snowHorsePictureBox.Location = new System.Drawing.Point(3, 3);
             this.snowHorsePictureBox.Name = "snowHorsePictureBox";
-            this.snowHorsePictureBox.Size = new System.Drawing.Size(995, 679);
+            this.snowHorsePictureBox.Size = new System.Drawing.Size(992, 679);
             this.snowHorsePictureBox.TabIndex = 0;
             this.snowHorsePictureBox.TabStop = false;
             // 
@@ -141,7 +142,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 41);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1001, 685);
+            this.tabPage4.Size = new System.Drawing.Size(998, 685);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Merch";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -152,7 +153,7 @@
             this.MerchBrowser.Location = new System.Drawing.Point(3, 3);
             this.MerchBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.MerchBrowser.Name = "MerchBrowser";
-            this.MerchBrowser.Size = new System.Drawing.Size(995, 679);
+            this.MerchBrowser.Size = new System.Drawing.Size(992, 679);
             this.MerchBrowser.TabIndex = 0;
             this.MerchBrowser.Url = new System.Uri("http://snowhorse.storenvy.com/", System.UriKind.Absolute);
             // 
@@ -162,7 +163,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 41);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1001, 685);
+            this.tabPage3.Size = new System.Drawing.Size(998, 685);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Dev Tasks";
             this.tabPage3.UseVisualStyleBackColor = true;
