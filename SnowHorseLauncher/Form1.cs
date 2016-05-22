@@ -9,6 +9,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SnowHorseLauncher
 {
@@ -16,6 +17,7 @@ namespace SnowHorseLauncher
     {
 
         private bool isRunning = false;
+        private string mCurrentWorkingPath;
 
         public MainWindow()
         {
@@ -23,6 +25,10 @@ namespace SnowHorseLauncher
 
             //check if snowhorse is running already
             OnSNOWHORSEisRunning();
+
+            //get the current working directory
+            mCurrentWorkingPath = Directory.GetCurrentDirectory();
+
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -37,9 +43,10 @@ namespace SnowHorseLauncher
 
         private void launchSNOWHORSE()
         {
+
             Process snowhorsegame = new Process();
             //TODO: Change this path to be the path of the game exe
-            snowhorsegame.StartInfo.FileName = "C:\\Program Files (x86)\\Forge\\Forge.exe";
+            snowhorsegame.StartInfo.FileName = mCurrentWorkingPath + "/Game/SNOWHORSE.exe";
             snowhorsegame.Start();
         }
 
@@ -49,9 +56,13 @@ namespace SnowHorseLauncher
         private void OnSNOWHORSEisRunning()
         {
 
-            //const string gamename = "SNOWHORSE";
-            //for debugging
-            string gamename = "Discord";
+            const string gamename = "SNOWHORSE";
+
+            //change the text to allow for snow horse to run
+            button1.Enabled = true;
+            button1.Text = "PLAY";
+            isRunning = false;
+            Console.WriteLine("SNOWHORSE is not running");
 
             //get a list of the processes on this computer
             Process[] processlist = Process.GetProcesses();
@@ -60,16 +71,22 @@ namespace SnowHorseLauncher
             {
                 if (theprocess.ProcessName == gamename)
                 {
-                    button1.Text = "SNOWHORSE is running";
+                    button1.Text = "Running";
                     button1.Enabled = false;
                     Console.WriteLine("SNOWHORSE is running");
                     isRunning = true;
                 }
+
             }
 
 
         }
 
+        /// <summary>
+        /// the Play Button to run SNOWHORSE.exe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             //check if snow horse is running 
@@ -79,6 +96,9 @@ namespace SnowHorseLauncher
             if (isRunning == false)
             {
                 launchSNOWHORSE();
+
+                OnSNOWHORSEisRunning();
+
             }
 
         }
@@ -119,6 +139,37 @@ namespace SnowHorseLauncher
             }
         }
 
+        /// <summary>
+        /// If the user clicks the refresh button the snowhorse button text will refresh its status
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void RefreshButton_Click(object sender, EventArgs e)
+        {
+            OnSNOWHORSEisRunning();
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainWindow_Deactivate(Object sender, EventArgs e)
+        {
+
+            Console.WriteLine("Main Window is Deactivated");
+            //check if snowhorse is running or not and update the button appropriately
+            OnSNOWHORSEisRunning();
+
+        }
+
+        private void MainWindow_Activated(object sender, System.EventArgs e)
+        {
+
+            Console.WriteLine("Main Window is Activated");
+            //check if snowhorse is running or not and update the button appropriately
+            OnSNOWHORSEisRunning();
+        }
 
     }
 }

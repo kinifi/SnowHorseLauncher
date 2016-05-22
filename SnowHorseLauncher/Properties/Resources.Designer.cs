@@ -83,6 +83,16 @@ namespace SnowHorseLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_refresh_128 {
+            get {
+                object obj = ResourceManager.GetObject("icon-refresh-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap no_conection_512 {
             get {
                 object obj = ResourceManager.GetObject("no-conection-512", resourceCulture);

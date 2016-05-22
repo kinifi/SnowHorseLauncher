@@ -31,21 +31,22 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.NewsBrowser = new System.Windows.Forms.WebBrowser();
-            this.noInternetIcon = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.snowHorsePictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.MerchBrowser = new System.Windows.Forms.WebBrowser();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.DevTasksBrowser = new System.Windows.Forms.WebBrowser();
+            this.noInternetIcon = new System.Windows.Forms.PictureBox();
+            this.RefreshButton = new System.Windows.Forms.Button();
+            this.snowHorsePictureBox = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.noInternetIcon)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.snowHorsePictureBox)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noInternetIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.snowHorsePictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -89,25 +90,15 @@
             this.NewsBrowser.Url = new System.Uri("http://snowhorsegame.tumblr.com/", System.UriKind.Absolute);
             this.NewsBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted);
             // 
-            // noInternetIcon
-            // 
-            this.noInternetIcon.Image = global::SnowHorseLauncher.Properties.Resources.no_conection_512;
-            this.noInternetIcon.Location = new System.Drawing.Point(238, 78);
-            this.noInternetIcon.Name = "noInternetIcon";
-            this.noInternetIcon.Size = new System.Drawing.Size(510, 510);
-            this.noInternetIcon.TabIndex = 1;
-            this.noInternetIcon.TabStop = false;
-            this.noInternetIcon.Visible = false;
-            this.noInternetIcon.WaitOnLoad = true;
-            // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.RefreshButton);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.snowHorsePictureBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 41);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(998, 685);
+            this.tabPage2.Size = new System.Drawing.Size(1001, 685);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "SNOW HORSE";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -126,23 +117,13 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // snowHorsePictureBox
-            // 
-            this.snowHorsePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.snowHorsePictureBox.Image = global::SnowHorseLauncher.Properties.Resources._12194886_416496711884875_4603880809263483227_o;
-            this.snowHorsePictureBox.Location = new System.Drawing.Point(3, 3);
-            this.snowHorsePictureBox.Name = "snowHorsePictureBox";
-            this.snowHorsePictureBox.Size = new System.Drawing.Size(992, 679);
-            this.snowHorsePictureBox.TabIndex = 0;
-            this.snowHorsePictureBox.TabStop = false;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.MerchBrowser);
             this.tabPage4.Location = new System.Drawing.Point(4, 41);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(998, 685);
+            this.tabPage4.Size = new System.Drawing.Size(1001, 685);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Merch";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -153,7 +134,7 @@
             this.MerchBrowser.Location = new System.Drawing.Point(3, 3);
             this.MerchBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.MerchBrowser.Name = "MerchBrowser";
-            this.MerchBrowser.Size = new System.Drawing.Size(992, 679);
+            this.MerchBrowser.Size = new System.Drawing.Size(995, 679);
             this.MerchBrowser.TabIndex = 0;
             this.MerchBrowser.Url = new System.Uri("http://snowhorse.storenvy.com/", System.UriKind.Absolute);
             // 
@@ -163,7 +144,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 41);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(998, 685);
+            this.tabPage3.Size = new System.Drawing.Size(1001, 685);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Dev Tasks";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -182,6 +163,45 @@
             this.DevTasksBrowser.Url = new System.Uri("https://trello.com/b/ydaxlA6O/snow-horse", System.UriKind.Absolute);
             this.DevTasksBrowser.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted_1);
             // 
+            // noInternetIcon
+            // 
+            this.noInternetIcon.Image = global::SnowHorseLauncher.Properties.Resources.no_conection_512;
+            this.noInternetIcon.Location = new System.Drawing.Point(238, 78);
+            this.noInternetIcon.Name = "noInternetIcon";
+            this.noInternetIcon.Size = new System.Drawing.Size(510, 510);
+            this.noInternetIcon.TabIndex = 1;
+            this.noInternetIcon.TabStop = false;
+            this.noInternetIcon.Visible = false;
+            this.noInternetIcon.WaitOnLoad = true;
+            // 
+            // RefreshButton
+            // 
+            this.RefreshButton.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.RefreshButton.AutoSize = true;
+            this.RefreshButton.BackColor = System.Drawing.Color.DodgerBlue;
+            this.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RefreshButton.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RefreshButton.ForeColor = System.Drawing.Color.White;
+            this.RefreshButton.Image = global::SnowHorseLauncher.Properties.Resources.icon_refresh_128;
+            this.RefreshButton.Location = new System.Drawing.Point(947, 632);
+            this.RefreshButton.Name = "RefreshButton";
+            this.RefreshButton.Size = new System.Drawing.Size(46, 45);
+            this.RefreshButton.TabIndex = 2;
+            this.RefreshButton.UseVisualStyleBackColor = false;
+            this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
+            // snowHorsePictureBox
+            // 
+            this.snowHorsePictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.snowHorsePictureBox.Image = global::SnowHorseLauncher.Properties.Resources._12194886_416496711884875_4603880809263483227_o;
+            this.snowHorsePictureBox.Location = new System.Drawing.Point(3, 3);
+            this.snowHorsePictureBox.Name = "snowHorsePictureBox";
+            this.snowHorsePictureBox.Size = new System.Drawing.Size(995, 679);
+            this.snowHorsePictureBox.TabIndex = 0;
+            this.snowHorsePictureBox.TabStop = false;
+            // 
             // MainWindow
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -196,13 +216,15 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Horse Launcher";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.noInternetIcon)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.snowHorsePictureBox)).EndInit();
+            this.tabPage2.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.noInternetIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.snowHorsePictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -220,6 +242,7 @@
         private System.Windows.Forms.PictureBox snowHorsePictureBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox noInternetIcon;
+        private System.Windows.Forms.Button RefreshButton;
     }
 }
 
